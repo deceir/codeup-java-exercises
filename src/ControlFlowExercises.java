@@ -74,6 +74,21 @@ public class ControlFlowExercises {
 //            System.out.println(loopIndex + "       | " + (loopIndex * loopIndex) + "       | " + (loopIndex * loopIndex * loopIndex));
 //        }
 
+        // Grades exercise
+        System.out.println("Please enter your grade.");
+        int userGrade = scanner.nextInt();
+
+        if (userGrade < 101 && userGrade > 87) {
+            System.out.println("Your grade is an A!");
+        } else if (userGrade < 88 && userGrade > 79) {
+            System.out.println("Your grade is a B!");
+        } else if (userGrade < 80 && userGrade > 66) {
+            System.out.println("Your grade is a C!");
+        } else if (userGrade < 67 && userGrade > 59) {
+            System.out.println("Your grade is a D!");
+        } else {
+            System.out.println("Your grade is an F!");
+        }
 
 
     }
