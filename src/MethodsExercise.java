@@ -18,6 +18,30 @@ public class MethodsExercise {
         return num1 / num2;
     }
 
+    public static double modulus(double num1, double num2) {
+        return num1 % num2;
+    }
+
+    //Multiplication without using asterisk
+    public static double multiplicationHard(double num1, double num2) {
+        double result = 0;
+        for (int index = 0; index < num2; index++) {
+            result += num1;
+        }
+        return result;
+    }
+
+//    public static int getInteger(int min, int max) {
+//
+//    }
+
+    public static boolean optionsPresent() {
+        System.out.println("You will access an arithmetic method.");
+        System.out.println("Please select from the below options which method to access.");
+        System.out.println("Options are: addition, subtraction, multiplication, division, and modulus.");
+        return true;
+    }
+
     public static boolean continueProgram() {
         Scanner scanner = new Scanner(System.in);
 
@@ -36,9 +60,11 @@ public class MethodsExercise {
         Scanner scanner = new Scanner(System.in);
         boolean doMath = true;
 
+
         System.out.println("You will access an arithmetic method.");
-        System.out.println("Please select from the below options which method to access.");
-        System.out.println("Options are: addition, subtraction, multiplication, and division.");
+
+        optionsPresent();
+
         do {
             String userResponse = scanner.nextLine();
 
@@ -51,8 +77,7 @@ public class MethodsExercise {
                 System.out.println(addition(num1, num2));
                 doMath = continueProgram();
                 if (doMath) {
-                    System.out.println("Please select from the below options which method to access.");
-                    System.out.println("Options are: addition, subtraction, multiplication, and division.");
+                    optionsPresent();
                 }
             }
             //Subtraction
@@ -64,8 +89,7 @@ public class MethodsExercise {
                 System.out.println(subtraction(num1, num2));
                 doMath = continueProgram();
                 if (doMath) {
-                    System.out.println("Please select from the below options which method to access.");
-                    System.out.println("Options are: addition, subtraction, multiplication, and division.");
+                    optionsPresent();
                 }
             }
             //Multiplication
@@ -77,8 +101,7 @@ public class MethodsExercise {
                 System.out.println(multiplication(num1, num2));
                 doMath = continueProgram();
                 if (doMath) {
-                    System.out.println("Please select from the below options which method to access.");
-                    System.out.println("Options are: addition, subtraction, multiplication, and division.");
+                    optionsPresent();
                 }
             }
             //Division
@@ -90,8 +113,31 @@ public class MethodsExercise {
                 System.out.println(division(num1, num2));
                 doMath = continueProgram();
                 if (doMath) {
-                    System.out.println("Please select from the below options which method to access.");
-                    System.out.println("Options are: addition, subtraction, multiplication, and division.");
+                    optionsPresent();
+                }
+            }
+            //Modulus
+            if (userResponse.equalsIgnoreCase("modulus")) {
+                System.out.println("Enter the first number.");
+                double num1 = scanner.nextDouble();
+                System.out.println("Enter the second number.");
+                double num2 = scanner.nextDouble();
+                System.out.println(modulus(num1, num2));
+                doMath = continueProgram();
+                if (doMath) {
+                    optionsPresent();
+                }
+            }
+            //Multiplication Hard
+            if (userResponse.equalsIgnoreCase("multiplicationhard")) {
+                System.out.println("Enter the first number.");
+                double num1 = scanner.nextDouble();
+                System.out.println("Enter the second number.");
+                double num2 = scanner.nextDouble();
+                System.out.println(multiplicationHard(num1, num2));
+                doMath = continueProgram();
+                if (doMath) {
+                    optionsPresent();
                 }
             }
 
