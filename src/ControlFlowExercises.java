@@ -58,23 +58,38 @@ public class ControlFlowExercises {
 //        }
 
 //        //Table Loop
+//        boolean userContinues = true;
+//        do {
 //
-//        System.out.println("What number do you choose?");
-//        int userInteger = scanner.nextInt();
-//        System.out.println("Here is your table!");
-//        System.out.print(" number ");
-//        System.out.print('|');
-//        System.out.print(" squared ");
-//        System.out.print('|');
-//        System.out.print(" cubed ");
-//        System.out.printf("%n");
-//        System.out.println("______  |  ______ | _____");
+//            System.out.println("What number do you choose?");
+//            int userInteger = scanner.nextInt();
+//            System.out.println("Here is your table!");
+//            System.out.print("number ");
+//            System.out.print('|');
+//            System.out.print(" squared ");
+//            System.out.print('|');
+//            System.out.print(" cubed");
+//            System.out.printf("%n");
+//            System.out.println("______ |  ______ | _____");
 //
-//        for (int loopIndex = 1; loopIndex <= userInteger; loopIndex++) {
-//            System.out.println(loopIndex + "       | " + (loopIndex * loopIndex) + "       | " + (loopIndex * loopIndex * loopIndex));
-//        }
+//            for (int loopIndex = 1; loopIndex <= userInteger; loopIndex++) {
+//                System.out.printf("%-6d", loopIndex);
+//                System.out.print(" | ");
+//                System.out.printf("%-7d", (loopIndex * loopIndex));
+//                System.out.print(" | ");
+//                System.out.print(loopIndex * loopIndex * loopIndex);
+//                System.out.println();
+//            }
+//            System.out.println("Would you like to continue? (y/n)");
+//            String userResponse = scanner.next();
+//            if (!userResponse.equalsIgnoreCase("y")) {
+//                userContinues = false;
+//            }
+//        }while (userContinues == true);
 
-        // Grades exercise
+//        String l = scanner.nextLine();
+
+//        // Grades exercise
         System.out.println("Please enter your grade.");
         int userGrade = scanner.nextInt();
 
