@@ -14,7 +14,6 @@ public class HighLow {
         System.out.println("I will pick a number between 1 and 100, try to guess the number.");
         int numberOfGuesses = 0;
         int correctNumber = randomNumber();
-        System.out.println(correctNumber);
         int userGuess = 0;
         do {
             System.out.println("Enter your guess.");
