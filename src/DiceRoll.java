@@ -11,7 +11,7 @@ public class DiceRoll {
         int dieTwo = (int) (Math.random() * numberOfSides) + 1;
         System.out.println("The first die lands on " + dieOne + ".");
         System.out.println("The second die lands on " + dieTwo + ".");
-        System.out.println("Totaling... " + (dieOne + dieTwo));
+        System.out.println("Totaling... " + (dieOne + dieTwo) + ".");
         return dieOne + dieTwo;
 
     }
@@ -19,7 +19,7 @@ public class DiceRoll {
     public static boolean continueProgram() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Would you like to continue? (y/n)");
+        System.out.println("Would you like to play again? (y/n)");
         String response = scanner.nextLine();
         if (response.equalsIgnoreCase("y")) {
             return true;
