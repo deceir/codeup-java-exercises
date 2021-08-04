@@ -15,7 +15,11 @@ public class MethodsExercise {
     }
 
     public static double division(double num1, double num2) {
-        return num1 / num2;
+        if (num2 == 0) {
+            return 0;
+        } else {
+            return num1 / num2;
+        }
     }
 
     public static double modulus(double num1, double num2) {
@@ -31,21 +35,29 @@ public class MethodsExercise {
         return result;
     }
 
-//    public static int getInteger(int min, int max) {
-//
-//    }
+    public static boolean getInteger(int min, int max) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter a number that is higher than " + min + " and lower than " + max + ".");
+        int userInteger = scanner.nextInt();
+        if (userInteger >= min && userInteger <= max) {
+            System.out.println("The integer, " + userInteger + ", is within the given range.");
+            return true;
+        } else {
+            System.out.println("The given integer, " + userInteger + ", is not within the given range.");
+            return false;
+        }
+    }
 
     public static boolean optionsPresent() {
-        System.out.println("You will access an arithmetic method.");
         System.out.println("Please select from the below options which method to access.");
-        System.out.println("Options are: addition, subtraction, multiplication, division, and modulus.");
+        System.out.println("Options are: addition, subtraction, multiplication, division, modulus, and getinteger.");
         return true;
     }
 
     public static boolean continueProgram() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Would you like to continue?");
+        System.out.println("Would you like to continue? (y/n)");
         String response = scanner.nextLine();
         if (response.equalsIgnoreCase("yes")) {
             return true;
@@ -135,6 +147,18 @@ public class MethodsExercise {
                 System.out.println("Enter the second number.");
                 double num2 = scanner.nextDouble();
                 System.out.println(multiplicationHard(num1, num2));
+                doMath = continueProgram();
+                if (doMath) {
+                    optionsPresent();
+                }
+            }
+            //Check Integer
+            if (userResponse.equalsIgnoreCase("getinteger")) {
+                System.out.println("Enter the first number.");
+                int num1 = scanner.nextInt();
+                System.out.println("Enter the second number.");
+                int num2 = scanner.nextInt();
+                getInteger(num1, num2);
                 doMath = continueProgram();
                 if (doMath) {
                     optionsPresent();
