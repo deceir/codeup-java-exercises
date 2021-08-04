@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.Math;
 
 public class MethodsExercise {
 
@@ -50,7 +51,7 @@ public class MethodsExercise {
 
     public static boolean optionsPresent() {
         System.out.println("Please select from the below options which method to access.");
-        System.out.println("Options are: addition, subtraction, multiplication, division, modulus, and getinteger.");
+        System.out.println("Options are: addition, subtraction, multiplication, division, modulus, getinteger, and factorial.");
         return true;
     }
 
@@ -59,14 +60,26 @@ public class MethodsExercise {
 
         System.out.println("Would you like to continue? (y/n)");
         String response = scanner.nextLine();
-        if (response.equalsIgnoreCase("yes")) {
+        if (response.equalsIgnoreCase("y")) {
             return true;
-        } else if (response.equalsIgnoreCase("no")) {
+        } else if (response.equalsIgnoreCase("n")) {
             return false;
         } else {
             return continueProgram();
         }
     }
+
+    //Factorial Exercise
+    public static int factorial(int num) {
+        int output = 1;
+        for (int i = 1; i <= num; i++) {
+            if (i <= num) {
+                output = output * i;
+            }
+        }
+        return output;
+    }
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -159,6 +172,30 @@ public class MethodsExercise {
                 System.out.println("Enter the second number.");
                 int num2 = scanner.nextInt();
                 getInteger(num1, num2);
+                doMath = continueProgram();
+                if (doMath) {
+                    optionsPresent();
+                }
+            }
+            //Factorial main
+            if (userResponse.equalsIgnoreCase("factorial")) {
+                System.out.println("Please enter a number that is between 1 and 10.");
+                int userInput = scanner.nextInt();
+                if (userInput >= 1 && userInput <= 10) {
+                    for (int i = 1; i <= userInput; i++) {
+                        if (i == 1) {
+                            System.out.print(userInput + "! = ");
+                        }
+                        if (i < userInput) {
+                            System.out.print(i + " x ");
+                        } else {
+                            System.out.print(i + " = " + factorial(userInput));
+                        }
+                    }
+                } else {
+                    System.out.println("The number entered was invalid.");
+                }
+                System.out.println("");
                 doMath = continueProgram();
                 if (doMath) {
                     optionsPresent();
