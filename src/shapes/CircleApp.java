@@ -16,10 +16,10 @@ public class CircleApp {
             System.out.println("Please enter the radius of the circle.");
             double radius = input.getDouble();
             Circle circle = new Circle(radius);
-            System.out.println("Circle radius is: " + radius);
-            circle.setCircumference((2 * Math.PI * radius));
+            System.out.println("Circle radius is: " + circle.getRadius());
+            circle.setCircumference((2 * Math.PI * circle.getRadius()));
             System.out.println("Circle circumference is: " + circle.getCircumference());
-            circle.setArea((Math.PI * (radius * radius)));
+            circle.setArea((Math.PI * (circle.getRadius() * circle.getRadius())));
             System.out.println("Circle area is: " + circle.getArea());
             counter++;
 
