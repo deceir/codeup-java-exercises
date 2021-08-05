@@ -6,6 +6,10 @@ public class Input {
 
     private Scanner scanner;
 
+    public Input() {
+        scanner = new Scanner(System.in);
+    }
+
     public String getString() {
         String input = scanner.nextLine();
         return input;
@@ -20,10 +24,26 @@ public class Input {
         }
     }
 
+    public int getInt() {
+//        System.out.println("Enter an integer.");
+        int input = scanner.nextInt();
+//        System.out.println(input);
+        return input;
+    }
+
+    public double getDouble() {
+//        System.out.println("Enter a decimal.");
+        double input = scanner.nextDouble();
+//        System.out.println(input);
+        return input;
+    }
+
+
     public int getInt(int min, int max) {
         System.out.println("Please enter an int between " + min + " and " + max + ".");
-        int input = scanner.nextInt();
+        int input = getInt();
         if (input >= min && input <= max) {
+//            System.out.println(input);
             return input;
         } else {
             return getInt(min, max);
@@ -32,8 +52,9 @@ public class Input {
 
     public double getDouble(double min, double max) {
         System.out.println("Please enter a decimal between " + min + " and " + max + ".");
-        int input = scanner.nextInt();
+        double input = getDouble();
         if (input >= min && input <= max) {
+//            System.out.println(input);
             return input;
         } else {
             return getDouble(min, max);
