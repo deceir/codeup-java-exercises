@@ -9,6 +9,8 @@ public class HighLow {
 
     public static void main(String[] args) {
 
+
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("I will pick a number between 1 and 100, try to guess the number.");
