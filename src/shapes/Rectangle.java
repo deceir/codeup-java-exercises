@@ -1,9 +1,9 @@
 package shapes;
 
-public class Rectangle {
+public class Rectangle extends Quadrilateral {
 
-    protected int length;
-    protected int width;
+    protected double length;
+    protected double width;
 
 //    public Rectangle() {
 //        this.length = 0;
@@ -28,6 +28,36 @@ public class Rectangle {
 
     public static void main(String[] args) {
 
+    }
+
+    @Override
+    public double getPerimeter() {
+        double length = this.getLength();
+        double width = this.getWidth();
+        return (2 * length) + (2 * width);
+    }
+
+    @Override
+    public double getArea() {
+        double length = this.getLength();
+        double width = this.getWidth();
+        return length * width;
+    }
+
+    @Override
+    public void setLength(double length) {
+        this.length = length;
+    }
+
+    public Rectangle(double length, double width) {
+        super(length, width);
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public void setWidth(double width) {
+        this.width = width;
     }
 
 //    public int getLength() {
