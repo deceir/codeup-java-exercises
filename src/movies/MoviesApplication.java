@@ -5,6 +5,16 @@ import java.util.Scanner;
 
 public class MoviesApplication {
 
+    public static String getMovieByCat(String category) {
+        String result = "";
+        for (Movie movie : MoviesArray.findAll()) {
+            if (movie.getCategory().equalsIgnoreCase(category)) {
+                result += movie.getName() + " | " + movie.getCategory() + "\n";
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -30,6 +40,22 @@ public class MoviesApplication {
                 for (Movie movie : MoviesArray.findAll()) {
                     System.out.println(movie.getName() + " | " + movie.getCategory());
                 }
+            }
+
+            if (userResponse == 2) {
+                System.out.println(getMovieByCat("animated"));
+            }
+
+            if (userResponse == 3) {
+                System.out.println(getMovieByCat("drama"));
+            }
+
+            if (userResponse == 4) {
+                System.out.println(getMovieByCat("comedy"));
+            }
+
+            if (userResponse == 5) {
+                System.out.println(getMovieByCat("scifi"));
             }
 
         } while (wantsToContinue);
