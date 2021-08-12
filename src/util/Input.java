@@ -1,5 +1,6 @@
 package util;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Input {
@@ -27,17 +28,36 @@ public class Input {
     }
 
     public int getInt() {
+
 //        System.out.println("Enter an integer.");
-        int input = scanner.nextInt();
+//            int input = scanner.nextInt();
 //        System.out.println(input);
-        return input;
+       try {
+
+           String input = getString();
+
+           int inputInt = Integer.valueOf(input);
+
+           return inputInt;
+       } catch (Exception e) {
+           System.out.println("Enter an integer.");
+       }
+       return getInt();
     }
 
     public double getDouble() {
 //        System.out.println("Enter a decimal.");
-        double input = scanner.nextDouble();
-//        System.out.println(input);
-        return input;
+        try {
+
+            String input = getString();
+
+            double inputInt = Double.valueOf(input);
+
+            return inputInt;
+        } catch (Exception e) {
+            System.out.println("Enter a double.");
+        }
+        return getDouble();
     }
 
 
