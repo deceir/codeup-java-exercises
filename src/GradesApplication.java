@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class GradesApplication {
 
@@ -40,8 +41,43 @@ public class GradesApplication {
         students.put("tommythecat1", tom);
         students.put("billyray33", billy);
 
+        Scanner sc = new Scanner(System.in);
 
-        System.out.println(students);
+        boolean wantsToContinue = true;
+        Student selectedStudent;
+
+        do {
+            System.out.println("Here are the usernames of current students: ");
+            System.out.println(students.keySet());
+
+            String userSearch = sc.nextLine();
+
+            if (students.containsKey(userSearch)) {
+
+                selectedStudent = students.get(userSearch);
+                System.out.println("Selected user's name is: ");
+                System.out.println(selectedStudent.getName());
+                System.out.println(userSearch + "'s grades are: ");
+                System.out.println(selectedStudent.getGrades());
+                System.out.println(userSearch + " grade average is: ");
+                System.out.println(selectedStudent.getGradeAverage());
+
+            } else {
+                System.out.println("There is no student with that username.");
+            }
+
+            System.out.println("Would you like to continue? (y/n)");
+            String userWantsToContinue = sc.nextLine();
+
+            if (userWantsToContinue.equalsIgnoreCase("y")) {
+                wantsToContinue = true;
+            } else if (userWantsToContinue.equalsIgnoreCase("n")) {
+                wantsToContinue = false;
+            }
+
+
+        } while (wantsToContinue);
+
 
     }
 
