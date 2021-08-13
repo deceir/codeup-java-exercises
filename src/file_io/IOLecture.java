@@ -36,9 +36,12 @@ public class IOLecture {
 
         List<String> contentReadFromFile = Files.readAllLines(dataFile);
 
-        System.out.println(contentReadFromFile);
+        for (String line : contentReadFromFile) {
+            System.out.println(line);
+        }
 
 
+        // testing push
 
     }
 }
