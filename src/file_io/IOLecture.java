@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 
 import static java.nio.file.Files.write;
 
@@ -17,10 +18,7 @@ public class IOLecture {
 
         ArrayList<String> fileContents = new ArrayList<>();
 
-        fileContents.add("Hello, from Polaris!");
-        fileContents.add("This document serves as the beginning of the long reign of Java.");
-        fileContents.add("Do not underestimate the power of Java.");
-
+        fileContents.add("say hello polaris");
 
         Path dataDirectory = Paths.get(directory);
         Path dataFile = Paths.get(directory, filename);
@@ -35,6 +33,10 @@ public class IOLecture {
         }
 
         Files.write(dataFile, fileContents);
+
+        List<String> contentReadFromFile = Files.readAllLines(dataFile);
+
+        System.out.println(contentReadFromFile);
 
 
 
