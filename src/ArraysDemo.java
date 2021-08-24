@@ -15,5 +15,7 @@ public class ArraysDemo {
 
         System.out.println("Score Card has been reset \n" + Arrays.toString(scorecard));
 
+        // Use ArrayLists rather than Arrays
+
     }
 }
