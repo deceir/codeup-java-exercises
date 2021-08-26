@@ -38,7 +38,6 @@ public class DiceRoll {
         System.out.println("Would you like to play a game? (y/n)");
         String userResponse = scanner.nextLine();
         do {
-
             if (userResponse.equalsIgnoreCase("y")) {
                 System.out.println("Let's play a game of dice. Please enter the number of sides each die will have.");
                 int userSides = scanner.nextInt();
