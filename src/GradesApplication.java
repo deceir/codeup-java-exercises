@@ -53,7 +53,6 @@ public class GradesApplication {
             String userSearch = sc.nextLine();
 
             if (students.containsKey(userSearch)) {
-
                 selectedStudent = students.get(userSearch);
                 System.out.println("Selected user's name is: ");
                 System.out.println(selectedStudent.getName());
@@ -61,7 +60,6 @@ public class GradesApplication {
                 System.out.println(selectedStudent.getGrades());
                 System.out.println(userSearch + " grade average is: ");
                 System.out.println(selectedStudent.getGradeAverage());
-
             } else {
                 System.out.println("There is no student with that username.");
             }
