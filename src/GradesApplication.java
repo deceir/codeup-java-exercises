@@ -39,7 +39,7 @@ public class GradesApplication {
         students.put("itsjohnnyyy", john);
         students.put("bigbob43", bob);
         students.put("tommythecat1", tom);
-        students.put("billyray33", billy);
+
 
         Scanner sc = new Scanner(System.in);
 
